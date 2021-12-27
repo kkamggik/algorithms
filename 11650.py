@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n = int(input())
 coords = []
 for _ in range(n):
