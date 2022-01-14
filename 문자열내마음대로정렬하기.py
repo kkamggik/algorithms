@@ -3,6 +3,7 @@ def solution(strings, n):
     for s in strings:
         s = list(s)
         answer.append(s)
+    answer.sort()
     answer.sort(key = lambda x:x[n])
     rst = []
     for ans in answer:
