@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(100000)
 def dfs(x,y,cnt):
     arr[y][x] = 1
     for d in dirc:
