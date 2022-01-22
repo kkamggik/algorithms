@@ -19,4 +19,3 @@ def solution(msg):
         idx += 1 
     answer.append(dic[tmsg])
     return answer
-print(solution("ABABABABABABABAB"))
