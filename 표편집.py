@@ -40,5 +40,5 @@ def solution(n, k, cmd):
             else:
                 nodes[prev][1] = v
                 nodes[nxt][0] = v
-    return answer
+    return ''.join(answer[1:])
 print(solution(8, 2, ["D 2", "C", "U 3", "C", "D 4", "C", "U 2", "Z", "Z"]))
