@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n,k = map(int, input().split())
 maxdist = 0
 ice = [0]*1000001
@@ -7,6 +9,7 @@ for _ in range(n):
     maxdist = max(maxdist, x)
 summ = 0
 for i in range(k*2+1):
+    if i > maxdist: break
     summ += ice[i]
 answer = summ
 left, right = 0, k*2+1
