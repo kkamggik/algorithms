@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 dirc = [[0,-1],[1,0],[0,1],[-1,0]]
 n,m = map(int, input().split())
 y,x,d = map(int, input().split())
