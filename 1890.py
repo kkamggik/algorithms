@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 def dfs(x,y):
     if x==n-1 and y==n-1: return 1
     if dp[y][x] == -1:
