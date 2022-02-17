@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n,k = map(int, input().split())
 arr = list(map(int, input().split()))
 s,e = 0,0
@@ -12,4 +14,5 @@ while True:
     else:
         summ += arr[e]
         e += 1
-print(answer)
+if answer ==2e9: print(0)
+else: print(answer)

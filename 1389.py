@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n,m = map(int, input().split())
 arr = [[1e9]*(n+1) for _ in range(n+1)]
 for _ in range(m):
