@@ -16,24 +16,10 @@ class Solution(object):
             idx += 1
             curr = curr.next
         target = idx - n - 1
+        if target < 0: return head.next
         curr = head
-        if target == -1:
-            head = curr.next
-        else:
-            idx = 0
-            while curr != None:
-                if idx == target:
-                    curr.next = curr.next.next
-                    break
-                curr = curr.next
-                idx += 1
-        curr = head
-        answer = ListNode()
-        head = answer
-        while curr!=None:
-            answer.next = ListNode()
-            answer = answer.next
-            answer.val = curr.val
+        for i in range(target):
             curr = curr.next
-        return head.next
+        curr.next = curr.next.next
+        return head
             
