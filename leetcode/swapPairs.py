@@ -4,18 +4,22 @@
 #         self.val = val
 #         self.next = next
 class Solution(object):
-    def middleNode(self, head):
+    def swapPairs(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        middle = 0
         curr = head
+        if curr == None: return head
+        prev = head
+        curr = curr.next
+        idx = 2
         while curr!=None:
+            if idx%2==0:
+                val = curr.val
+                curr.val = prev.val
+                prev.val = val
+            idx += 1
+            prev = prev.next
             curr = curr.next
-            middle += 1
-        middle//=2
-        curr = head
-        for i in range(middle):
-            curr = curr.next
-        return curr
+        return head
