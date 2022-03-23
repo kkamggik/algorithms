@@ -7,7 +7,7 @@ while left <= right:
     for tree in trees:
         if tree-mid > 0: rem += (tree-mid)
     if rem >= m:
-        left = mid+1
+        left = mid + 1
     else:
-        right = mid-1
+        right = mid - 1
 print(right)

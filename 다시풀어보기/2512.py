@@ -8,8 +8,8 @@ while left <= right:
     for req in requests:
         if req > mid: bgt += mid
         else: bgt += req
-    if bgt > m:
-        right = mid-1
+    if bgt <= m:
+        left = mid + 1
     else:
-        left = mid+1
+        right = mid - 1
 print(right)

@@ -10,7 +10,7 @@ while left <= right:
     for line in lines:
         cnt += line//mid
     if cnt >= m:
-        left = mid+1
+        left = mid + 1
     else:
-        right = mid-1
+        right = mid -1
 print(right)
