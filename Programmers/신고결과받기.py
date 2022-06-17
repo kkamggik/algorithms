@@ -1,19 +1,19 @@
 def solution(id_list, report, k):
-    rst = [0]*len(id_list)
-    dic = {}
-    for i in range(len(id_list)):
-        dic[id_list[i]] = i
-    reports = [[0]*len(id_list) for _ in range(len(id_list))]
+    names = {}
+    for idx,name in enumerate(id_list):
+        names[name] = idx
+    n = len(id_list)
+    reports = [[0]*n for _ in range(n)]
     for r in report:
-        r = r.split()
-        r1,r2 = dic[r[0]], dic[r[1]]
-        reports[r2][r1] = 1
-    for i in range(len(id_list)):
+        r1,r2 = r.split(' ')
+        reports[names[r2]][names[r1]] = 1
+    rst = [0]*n
+    for i in range(n):
         if sum(reports[i]) >= k:
             rst[i] = 1
-    answer = [0]*len(id_list)
-    for i in range(len(id_list)):
-        for j in range(len(id_list)):
-            if reports[j][i]==1 and rst[j]==1:
+    answer = [0]*n
+    for i in range(n):
+        for j in range(n):
+            if reports[j][i] == 1 and rst[j] == 1:
                 answer[i] += 1
     return answer
