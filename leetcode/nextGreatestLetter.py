@@ -6,12 +6,11 @@ class Solution(object):
         :rtype: str
         """
         if letters[-1] <= target: return letters[0]
-        start,end =  0, len(letters)-1
-        while start <= end:
+        start,end = 0, len(letters)-1
+        while start < end:
             mid = (start+end)//2
             if letters[mid] <= target:
-                start = mid + 1
+                start = mid+1
             else:
-                end = mid - 1
+                end = mid
         return letters[start]
-                
