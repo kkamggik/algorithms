@@ -5,7 +5,7 @@ class TrieNode:
 class Trie:
     def __init__(self):
         self.root = TrieNode()
-        self.res = [];
+        self.res = []
     def insert(self, word):
         root = self.root
         length = len(word)
