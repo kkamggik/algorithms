@@ -1,14 +1,18 @@
-from itertools import permutations 
+answer = 0
+n = 0
+visited = [0]*8
+dungeon = []
+def dfs(left, cnt):
+    global answer 
+    answer = max(cnt, answer)
+    for i in range(n):
+        if (left >= dungeon[i][0] and visited[i] == 0):
+            visited[i] = 1
+            dfs(left - dungeon[i][1], cnt+1)
+            visited[i] = 0
 def solution(k, dungeons):
-    answer = -1
-    permutation = permutations(dungeons, len(dungeons))
-    for perm in permutation:
-        cnt = 0
-        tiredness = k
-        for p in perm:
-            if p[0] <= tiredness:
-                tiredness -= p[1]
-                cnt += 1
-        answer = max(answer, cnt)
+    global n, dungeon
+    n = len(dungeons)
+    dungeon = dungeons[:]
+    dfs(k, 0)
     return answer
-print(solution(	80, [[80, 20], [50, 40], [30, 10]]))
